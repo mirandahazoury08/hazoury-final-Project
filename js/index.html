@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/@turf/turf@7.0.0/umd/turf.min.js"></script>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hazoury-Final-Project</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+
+<body>
+     <!-- fmain container with map and sidebarr -->
+    <div id="main-container">
+         <!-- Top title and buttons(tried to make them that when clicked, the specific states with specific abortion restriction would change opacity, but becasue i had to manually add them in, not sure if it works.)-->
+        <nav>
+            <div class="title">Laws on Abortion in your State</div>
+            <div class="button-container">
+                <button Class=Abortionlaws id="button1" style="background-color: #a84a3f;"
+                    onclick="buttonClicked(1)">Very
+                    Restricted</button>
+                <button Class=Abortionlaws id="button2" style="background-color: #c6554b;"
+                    onclick="buttonClicked(2)">Restricted</button>
+                <button Class=Abortionlaws id="button3" style="background-color: #cd7369;"
+                    onclick="buttonClicked(3)">Some
+                    Restriction</button>
+                <button Class=Abortionlaws id="button4" style="background-color: #e18075;"
+                    onclick="buttonClicked(4)">Protective</button>
+                <button Class=Abortionlaws id="button5" style="background-color:#e6ab9e;"
+                    onclick="buttonClicked(5)">Very
+                    Protective</button>
+            </div>
+        </nav>
+         <!-- Sidebar -->
+        <div id="content-container">
+
+            <div id="sidebar">
+                <h1>Your State's Laws on Abortion</h1>
+                <p>The abortion landscape in the United States is fragmented and increasingly polarized. Many states
+                    have
+                    implemented restrictions or bans that make it challenging, if not impossible, for people to access
+                    abortion care. Conversely, other states have taken steps to protect abortion rights and ensure
+                    access.
+                    This interactive map categorizes states into one of five groups based on their current abortion
+                    policies. Users can select any state to view detailed information about its abortion policies,
+                    characteristics of its residents, and key abortion statistics.</p>
+                <h3>Click on the different States to learn where they land on restrictive laws of abortion.</h3>
+                <p>The five different groups are defined as: Very Restrictive States, Restrictive States, States with Some Restriction, Protective States, and very Protective State.  </p>
+                <h3>Click on the different markers to get description on what that entails.</h3>
+                 <!-- legend in sidebar -->
+                <div class="legend">
+                    <div>
+                        <span class="legend-key" style="background-color: #a84a3f;"></span>
+                        <span>Very Restrictive</span>
+                    </div>
+                    <div>
+                        <span class="legend-key" style="background-color: #c6554b;"></span>
+                        <span>Restrictive</span>
+                    </div>
+                    <div>
+                        <span class="legend-key" style="background-color: #cd7369;"></span>
+                        <span>Some Restriction</span>
+                    </div>
+                    <div>
+                        <span class="legend-key" style="background-color: #e18075;"></span>
+                        <span>Protective</span>
+                    </div>
+                    <div>
+                        <span class="legend-key" style="background-color: #e6ab9e;"></span>
+                        <span>Very Protective</span>
+                    </div>
+                </div>
+            </div>
+            <div id="map"></div>
+             <!-- floating sidebar -->
+            <div class="floating-sidebar">
+                <div class="title-float">
+                    State
+                </div>
+                <div id="state-name"></div> </div>
+        </div>
+        
+        <button onclick="buttonClicked()">Click me</button>
+
+        <div id="State"></div>
+    </div>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

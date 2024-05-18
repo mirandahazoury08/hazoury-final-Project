@@ -1,0 +1,170 @@
+html,
+head,
+body,
+
+/*viewport for map and other data on map*/
+
+#main-container {
+    height: 100%;
+    width: 100%;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+/*no padding*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+/*Title space on top*/
+nav {
+    padding: 1rem;
+    border-bottom: 1px solid #000;
+    display: flex;
+}
+
+/*Style content on Sidebar*/
+#content-container {
+    flex-grow: 1;
+    display: flex;
+    min-height: 0;
+}
+
+
+/*Style Sidebar*/
+#sidebar {
+    width: 348px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    overflow-y: scroll;
+    box-sizing: border-box;
+
+}
+/*Style buttons on top*/
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 300px;
+}
+/*Style buttons on top*/
+.button {
+    padding: 8px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/*button hoverning feature*/
+.button:hover {
+    opacity: 0.7;
+}
+/*Style floating sidebar*/
+.floating-sidebar {
+    position: absolute;
+    top: 80px;
+    left: 850px;
+    width: 250px;
+    z-index: 10;
+    background: #e6ab9e;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: sans-serif;
+}
+/*Style state-namer*/
+#state-name,
+.description-text {
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-family:Impact, 'Arial Narrow Bold', sans-serif;
+}
+/*Style title in floating sidebar*/
+.title-float {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+/*Style legend*/
+.legend {
+    padding: 10px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+    line-height: 18px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 5px;
+    font-size: 12px;
+}
+/*Style legend key*/
+.legend-key {
+    display: inline-block;
+    border-radius: 20%;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+/*style mapbox-popup*/
+.mapboxgl-popup {
+    max-width: 400px;
+    font:
+        12px/20px 'Helvetica Neue',
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+.description-text {
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.title {
+    font-weight: 60;
+}
+
+#map {
+    height: 100%;
+    flex-grow: 1;
+}
+.marker {
+    background-image: url('https://www.pngkey.com/png/full/18-189422_red-dot-png-circle.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}  
+.mapboxgl-popup {
+    max-width: 200px;
+  }
+  
+  .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+@media only screen and (max-width: 800px) {
+    #content-container {
+        flex-direction: column-reverse;
+    }
+
+    #map {
+        height: 60%;
+        flex-shrink: 0;
+    }
+
+    #sidebar {
+        width: 100%;
+    }
+}
